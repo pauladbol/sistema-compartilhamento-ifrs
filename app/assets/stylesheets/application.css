@@ -2,3 +2,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.min-margin-top {
+	margin-top: 80px;
+	
+}
