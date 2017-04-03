@@ -1,29 +1,35 @@
 <%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+		  <ul>
+		  <% @post.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	<% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :subject_id %><br>
-    <%= f.number_field :subject_id %>
-  </div>
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="form-group">
+		<div class="col-lg-offset-4 col-lg-4">
+		  <%= f.text_field :title, :id => "title-post", :placeholder => "Título", :class => "form-control" %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-offset-4 col-lg-4">
+		  <%= f.text_area :text, :id => "text-post", :placeholder => "Texto", :class => "form-control" %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-offset-4 col-lg-4">
+
+		  	<%= f.collection_select :subject_id, Subject.order(:name), :id, :name, include_blank: true, :class => "form-control"%>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-offset-4 col-lg-4">
+		  <%= f.submit "Salvar", :class => "btn btn-default btn-lg btn-block btn-primary" %>
+		</div>
+	</div>
 <% end %>

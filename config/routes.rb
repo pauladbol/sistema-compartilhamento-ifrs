@@ -9,9 +9,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'home#index'
+   get 'index' => 'home#index'
    get 'login' => 'sessions#new'
    post 'login' => 'sessions#create'
+   delete 'logout' => 'sessions#destroy'
    get 'users_new' => 'users#new'
+   get 'posts_new' => 'posts#new'
    get 'courses' => 'courses#show'
 
   # Example of regular route:

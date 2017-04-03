@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326193534) do
+ActiveRecord::Schema.define(version: 20170402230446) do
 
   create_table "attachments", force: :cascade do |t|
     t.string   "name"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170326193534) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.integer  "subject_id"
-    t.string   "text"
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,10 +45,11 @@ ActiveRecord::Schema.define(version: 20170326193534) do
     t.string   "name"
     t.string   "username"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "matricula"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "auth_token"
   end
 
 end
