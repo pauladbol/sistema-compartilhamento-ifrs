@@ -1,3 +1,4 @@
 class Post < ActiveRecord::Base
-	has_one :subject
+	belongs_to :subject
+	belongs_to :user
 end

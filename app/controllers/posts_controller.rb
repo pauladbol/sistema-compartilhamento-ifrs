@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_subject, only: [:new, :create, :edit]
+  before_action :set_user, only: [:new, :create, :edit]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts  = Post.all
   end
 
   # GET /posts/1
@@ -65,6 +67,14 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_subject
+      @subject = Subject.find(@post.subject_id)
+    end
+
+    def set_user
+      @user = User.find(@post.user_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
