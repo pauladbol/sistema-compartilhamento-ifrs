@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_subject, only: [:new, :create, :edit]
-  before_action :set_user, only: [:new, :create, :edit]
+  # before_action :set_subject, only: [:new, :create, :edit]
+  # before_action :set_user, only: [:new, :create, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -69,13 +69,13 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def set_subject
-      @subject = Subject.find(@post.subject_id)
-    end
+    # def set_subject
+    #   @subject = Subject.find_by_id(1)
+    # end
 
-    def set_user
-      @user = User.find(@post.user_id)
-    end
+    # def set_user
+    #   @user = User.find_by_id(1)
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params

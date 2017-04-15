@@ -13,15 +13,15 @@ class User < ActiveRecord::Base
 	has_secure_password
 	before_create { generate_token(:auth_token) }
 
-	# before_save :encrypt_password
+	before_save :encrypt_password
 	# after_save :clear_password
 
-	# def encrypt_password
-	# 	if password_digest.present?
-	# 		password_salt = BCrypt::Engine.generate_salt
-	# 		self.password_digest = BCrypt::Engine.hash_secret(password_digest, password_salt)
-	# 	end
-	# end
+	def encrypt_password
+		if password_digest.present?
+			password_salt = BCrypt::Engine.generate_salt
+			self.password_digest = BCrypt::Engine.hash_secret(password_digest, password_salt)
+		end
+	end
 
 	# def clear_password
 	# 	self.password_digest = nil

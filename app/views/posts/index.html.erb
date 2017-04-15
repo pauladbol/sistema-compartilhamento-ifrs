@@ -27,8 +27,8 @@
             <td><%= post.subject_id %></td>
             <td><%= post.subject.name %></td>
             <td><%= post.text %></td>
-            <td><%= link_to 'Show', post %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= button_to 'Show', post %></td>
+            <td><%= button_to 'Edit', edit_post_path(post) %></td>
 
             <td><%= button_to "Delete", post, :method=>:delete, :class=>:destroy %> </td>
           </tr>
@@ -38,7 +38,7 @@
 
     <br>
 
-    <%= link_to 'New Post', new_post_path %>
+    <%= button_to 'Nova Postagem', new_post_path %>
 
   </div>
 
