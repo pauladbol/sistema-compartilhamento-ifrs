@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to login_url, error: "Email não existe, por favor, cadastre-se"
     # elsif @user.password.nil?
     #   redirect_to login_url, error: "Senha em branco!!!!!"
-    elsif @user && @user.authenticate(params[:session][:password])
+    elsif @user && @user.authenticate(params[:session][:password_digest])
       # if params[:remember_me]
       #   cookies.permanent[:auth_token] = @user.auth_token
       # else
