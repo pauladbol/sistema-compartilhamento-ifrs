@@ -6,3 +6,7 @@
 .text-area-size {
 	height: 200px;
 }
+
+#editor {
+	overflow:scroll; max-height:300px
+}

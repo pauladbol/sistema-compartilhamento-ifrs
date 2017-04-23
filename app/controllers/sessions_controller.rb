@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to root_url, notice: "Você finalizou a sua sessão!"
+    redirect_to index_url, notice: "Você finalizou a sua sessão!"
   end
 end

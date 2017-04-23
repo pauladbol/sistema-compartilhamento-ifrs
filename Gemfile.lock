@@ -45,6 +45,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.1.1)
@@ -56,6 +58,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
+    editor (0.0.8)
+      tinymce-rails
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.7)
@@ -138,6 +142,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    tinymce-rails (4.5.6)
+      railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -158,8 +164,10 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt
   bootstrap-sass (~> 3.3.7)
+  bootstrap-wysihtml5-rails (~> 0.3.3.8)
   byebug
   coffee-rails (~> 4.1.0)
+  editor (~> 0.0.8)
   execjs
   jbuilder (~> 2.0)
   jquery-rails

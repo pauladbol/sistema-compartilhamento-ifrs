@@ -33,6 +33,10 @@ gem 'autoprefixer-rails'
 
 gem 'bcrypt'
 
+gem 'editor', '~> 0.0.8'
+
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
+
 
 #  ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
