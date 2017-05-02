@@ -1,3 +1,4 @@
+<%= tinymce %>
 <%= form_for(@post) do |f| %>
 	<% if @post.errors.any? %>
 		<div id="error_explanation">
@@ -18,29 +19,9 @@
 	</div>
 	<div class="form-group"> 
 		<div class="col-lg-offset-3 col-lg-6 text-area-size ">
-			<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
-				<div class="btn-group">
-					<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
-		         	<ul class="dropdown-menu">
-		          	</ul>
-		        </div>
-		      	<div class="btn-group">
-			        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
-			          <ul class="dropdown-menu">
-			          <li><a data-edit="fontSize 5"><font size="5">Grande</font></a></li>
-			          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
-			          <li><a data-edit="fontSize 1"><font size="1">Pequena</font></a></li>
-			          </ul>
-		      	</div>
-				<div class="btn-group">
-			        <a class="btn btn-default" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
-			        <a class="btn btn-default" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
-			        <a class="btn btn-default" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a>
-			        <a class="btn btn-default" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
-			    </div>
-		    </div>
+			
 		    <div>
-		     <%= f.text_area :text, :id => "text-post", :placeholder => "Texto", :id => "editor", :class => "editor form-control", cols: "30", rows: "9"  %>
+		     <%= f.text_area :text, :class => "tinymce" %>
 		  	</div>
 		</div>
 	</div>
