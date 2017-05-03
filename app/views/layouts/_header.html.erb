@@ -12,6 +12,7 @@
          
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li>
@@ -40,12 +41,13 @@
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href= "/users/<%=current_user.id%>/edit" class="link-style" title="EditarPerfil">
+                                <a href= "/users/<%=current_user.id%>/edit" class="link-style" title="Editar Perfil">
                                 Editar minhas informações
                                 </a>
-                                <li role="separator" class="divider"></li>
+                                
                             </li>
-                            <li><%= button_to "Sair", logout_path, method: "delete"%></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="text-right"><%= button_to "Sair", logout_path, method: "delete"%></li>
                         </ul>
                     </li>
                 <%else%>

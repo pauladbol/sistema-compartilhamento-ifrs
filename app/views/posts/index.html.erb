@@ -5,37 +5,44 @@
 <%end%>
 
 <section id="section-posts">
-  <div class="form-horizontal">
-      <div class="col-lg-12 text-center login-title">
-          <h1>Postagens</h1>
-        </br>
-          <h4></h4>
-      </div>
+    <div class="form-horizontal">
+        <div class="col-lg-12 text-center login-title">
+            <h1>Postagens</h1>
+            </br>
+            <h4></h4>
+        </div>
 
-  <div class="col-lg-offset-2 col-lg-8">
-      <table class="table table-hover table-responsive">
-        <thead class="thead-default">
-          <tr>
-            <th>Título</th>
-            <th>Categoria</th>
-            <!-- <th colspan="2"></th> -->
-          </tr>
-        </thead>
+        <div class="col-lg-offset-2 col-lg-8">
+            <% @posts.each do |post| %>
+                <div class="row well">
 
-        <tbody>
-          <% @posts.each do |post| %>
-            <tr>
-              <td><%= link_to post.title, post %></td>
-              <td><%= post.subject.name %></td>
-              <!-- <td><%= button_to 'Show', @post %></td> 
-              <td><%= button_to 'Edit', edit_post_path(post) %></td>
-              <td><%= button_to "Delete", post, :method=>:delete, :class=>:destroy %> </td>-->
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-  </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <%= link_to post.title, post %>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <% if post.user != nil %>
+                                Por <%= post.user.name %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <div class="row">
+                            <%= post.subject.name %>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <%= post.created_at %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
 
-  </div>
+        </div>
+
+    </div>
 
 </section>
