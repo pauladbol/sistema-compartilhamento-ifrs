@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+  # before_action :set_comments, only: [:show]
   # before_action :set_subject, only: [:new, :create, :edit]
   # before_action :set_user, only: [:new, :create, :edit]
 
@@ -12,6 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.all
   end
 
   # GET /posts/new
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'Postagem criada com sucesso.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -44,7 +48,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Postagem atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,7 +62,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Postagem excluida com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -81,6 +85,10 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    # def set_comments
+    #   @comments = @post.comments.all
+    # end
+
     # def set_subject
     #   @subject = Subject.find_by_id(1)
     # end
@@ -91,6 +99,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :subject_id, :text, :user_id)
+      params.require(:post).permit(:title, :subject_id, :text, :user_id, :attachment)
     end
 end

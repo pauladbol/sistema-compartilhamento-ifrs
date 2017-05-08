@@ -1,0 +1,18 @@
+.profile-background {
+	background-color: #fbf7ee;
+	border-radius: 5px;
+
+}
+
+.profile-image {
+	border-radius: 60px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+}
+
+.space-between {
+	margin-left: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+}

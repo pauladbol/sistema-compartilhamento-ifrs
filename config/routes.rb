@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   resources :attachments
   resources :subjects
   # resources :posts
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -24,6 +27,8 @@ Rails.application.routes.draw do
    get 'users_new' => 'users#new'
    # get 'posts_new' => 'posts#new'
    get 'courses' => 'courses#show' 
+
+   post 'comments' => 'comments#create', as: "create_comment"
    # get 'posts' => 'posts#show'
    # get 'edit_post' => 'posts#edit'
 
