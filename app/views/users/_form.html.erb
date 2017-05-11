@@ -24,6 +24,12 @@
   </div>
   <div class="form-group">
     <div class="col-lg-offset-4 col-lg-4">
+        <%= f.text_field :matricula, :id => "matricula-user", :placeholder => "Matrícula", :class => 
+        "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-4 col-lg-4">
         <%= f.text_field :email, :id => "email-user", :placeholder => "E-mail", :class => 
         "form-control" %>
     </div>
@@ -31,12 +37,6 @@
   <div class="form-group">
     <div class="col-lg-offset-4 col-lg-4">
         <%= f.password_field :password_digest, :id => "password-user", :placeholder => "Senha", :class => 
-        "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-offset-4 col-lg-4">
-        <%= f.text_field :matricula, :id => "matricula-user", :placeholder => "Matrícula", :class => 
         "form-control" %>
     </div>
   </div>

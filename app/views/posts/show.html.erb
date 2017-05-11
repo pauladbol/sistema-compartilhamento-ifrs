@@ -53,14 +53,18 @@
                 <hr>
                 <div class="row">
                     <div class="col-lg-6">
-    	                Anexo: <%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
+                        <% if @post.attachment_file_name != nil %>
+    	                   Anexo: <%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
+                        <% end %>
     	            </div>
                     <div class="cl-lg-2 text-right">
-                    	<%= button_to like_post_path(@post), class: "btn btn-default" , method: :put do %>
-                    		Aprovado!
-    					  	<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> 
-    					  	<%= @post.get_upvotes.size %>
-    					<% end %>
+                        <% if @post.user != current_user %>
+                        	<%= button_to like_post_path(@post), class: "btn btn-default" , method: :put do %>
+                        		Aprovado!
+        					  	<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> 
+        					  	<%= @post.get_upvotes.size %>
+        					<% end %>
+                        <% end %>
     				</div>
                     
                     

@@ -7,10 +7,18 @@
 
 <section id="section-posts">
     <div class="form-horizontal min-margin-top">
-        <div class="col-lg-12 text-center login-title">
+        <div class="col-lg-offset-2 col-lg-6 login-title">
             <h1>Postagens</h1>
             </br>
             <h4></h4>
+            
+        </div>
+        <div class="col-lg-1 post-button">
+            <% if current_user %>
+                <%= button_to 'Nova Postagem', new_post_path %>
+            <% end %>
+        </div>
+        <div class="col-lg-3">
         </div>
 
         <div class="col-lg-offset-2 col-lg-8">

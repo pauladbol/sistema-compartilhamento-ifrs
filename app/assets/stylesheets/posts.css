@@ -29,6 +29,11 @@
 	font-size: 20px;
 	
 }
+
+.post-button {
+  padding-top: 25px;
+  padding-left: 80px;
+}
 /*
 .icon-edit:hover {
 	background-color: #CDC8B1;
