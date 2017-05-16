@@ -45,6 +45,12 @@ gem 'acts_as_commentable', '~> 3.0.1'
 
 gem "paperclip", "~> 5.0.0"
 
+gem 'gamification'
+
+gem 'rails-observers'
+
+gem 'merit'
+
 #  ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

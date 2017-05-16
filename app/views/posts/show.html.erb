@@ -1,5 +1,6 @@
 <% if notice != nil %>
-	<div class= "alert alert-success col-lg-offset-4 col-lg-4 centralize text-center">
+	<div class= "alert alert-success alert-dismissible col-lg-offset-4 col-lg-4 centralize text-center">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<p id="notice"><%= notice %></p>
 	</div>
 <%end%>
@@ -58,13 +59,13 @@
                         <% end %>
     	            </div>
                     <div class="cl-lg-2 text-right">
-                        <% if @post.user != current_user %>
+                       
                         	<%= button_to like_post_path(@post), class: "btn btn-default" , method: :put do %>
                         		Aprovado!
         					  	<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> 
         					  	<%= @post.get_upvotes.size %>
         					<% end %>
-                        <% end %>
+                        
     				</div>
                     
                     

@@ -38,6 +38,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_commentable (3.0.1)
     acts_as_votable (0.10.0)
+    ambry (1.0.0)
     arel (6.0.4)
     autoprefixer-rails (6.7.7.2)
       execjs
@@ -51,6 +52,12 @@ GEM
       rails (>= 3.1.0)
     builder (3.2.3)
     byebug (9.0.6)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -67,6 +74,10 @@ GEM
       tinymce-rails
     erubis (2.7.0)
     execjs (2.7.0)
+    gamification (1.0.3)
+      carrierwave (~> 0.10)
+      mini_magick (~> 3.7)
+      rails (~> 4.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
@@ -83,10 +94,14 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
+    merit (2.4.0)
+      ambry (~> 1.0.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
+    mini_magick (3.8.1)
+      subexec (~> 0.2.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -120,6 +135,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -148,6 +165,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    subexec (0.2.3)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -183,10 +201,13 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   editor (~> 0.0.8)
   execjs
+  gamification
   jbuilder (~> 2.0)
   jquery-rails
+  merit
   paperclip (~> 5.0.0)
   rails (= 4.2.5)
+  rails-observers
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

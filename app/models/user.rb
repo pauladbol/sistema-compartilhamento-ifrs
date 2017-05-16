@@ -1,13 +1,19 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
+  has_merit
+
 	has_many :posts, dependent: :destroy
 	# attr_accessor :password_digest
 
+	rewardable
+	
 	EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
 	validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20}
 	validates :email, :presence => :true, :uniqueness => true, :format => EMAIL_REGEX
 	validates :password_digest, :presence => :true
 	validates_length_of :password_digest, :in => 6..20, :on => create
+
+	
 
 	include BCrypt
 	has_secure_password

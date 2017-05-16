@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   # before_action :set_comments, only: [:show]
   # before_action :set_subject, only: [:new, :create, :edit]
   # before_action :set_user, only: [:new, :create, :edit]
@@ -56,6 +55,11 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  # def delete_attachment
+  #   attachment.clear
+  # end
+
 
   # DELETE /posts/1
   # DELETE /posts/1.json
