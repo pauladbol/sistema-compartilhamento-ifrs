@@ -8,16 +8,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%= link_to 'Sistema de Compartilhamento', index_url, :class => "navbar-brand topnav" %>
+            <%= link_to 'SHARIF', index_url, :class => "navbar-brand topnav" %>
          
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li>
-                    <%= link_to 'Postagens', posts_path %>
-                </li>
+                <% if current_user %>
+                    <li>
+                        <%= link_to 'Postagens', posts_path %>
+                    </li>
+                <% end %>
                 <li>
                     <a href="#services">Sobre nós</a>
                 </li>

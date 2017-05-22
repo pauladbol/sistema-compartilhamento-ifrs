@@ -45,10 +45,42 @@ module Merit
       #   user.name.length > 4
       # end
 
-      grant_on 'posts#vote', badge_id: 1, to: :user do |post|
-        post.votes.count == 1
-      end
+        grant_on 'posts#upvote', badge: 'Amado', to: :user do |post|
+          post.votes_for.size == 1
+        end
 
+        grant_on 'posts#upvote', badge: 'Calouro', to: :user do |post|
+          post.votes_for.size == 5
+        end
+
+        grant_on 'posts#upvote', badge: 'Popular', to: :user do |post|
+          post.votes_for.size == 10
+        end
+
+        grant_on 'posts#upvote', badge: 'Super Popular', to: :user do |post|
+          post.votes_for.size == 15
+        end
+
+        grant_on ['users#update'], badge: 'Babaca' do |user|
+            user.name? && user.email?
+        end  
+
+        grant_on ['users#show'], badge: 'Escritor Jr' do |user|
+            user.posts.count >= 1
+        end 
+
+        grant_on ['users#show'], badge: 'Escritor' do |user|
+            user.posts.count >= 5
+        end 
+
+        grant_on ['users#show'], badge: 'Criativo' do |user|
+            user.posts.count >= 10
+        end 
+
+        grant_on ['users#show'], badge: 'Mega Criativo' do |user|
+            user.posts.count >= 15
+        end
+        
     end
   end
 end

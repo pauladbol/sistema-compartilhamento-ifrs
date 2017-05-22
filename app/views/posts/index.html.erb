@@ -16,7 +16,7 @@
         </div>
         <div class="col-lg-1 post-button">
             <% if current_user %>
-                <%= button_to 'Nova Postagem', new_post_path %>
+                <%= link_to 'Nova Postagem', new_post_path, :class=>"btn btn-default" %>
             <% end %>
         </div>
         <div class="col-lg-3">

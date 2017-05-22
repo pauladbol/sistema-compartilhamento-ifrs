@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         format.html { redirect_to login_path, notice: 'Usuário criado com sucesso.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Ocorreu um erro durante o cadastro do usuário.' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

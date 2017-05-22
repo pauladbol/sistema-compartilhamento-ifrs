@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    # current_user.add_badge(1)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Postagem criada com sucesso.' }

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:session][:email])
     if @user.nil?
-      redirect_to login_url, error: "Email não existe, por favor, cadastre-se"
+      redirect_to login_url, notice: "Email não existe, por favor, cadastre-se"
     # elsif @user.password.nil?
     #   redirect_to login_url, error: "Senha em branco!!!!!"
     elsif @user && @user.authenticate(params[:session][:password_digest])
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       # end
       
     else
-      redirect_to login_url, error: "Email ou senha inválidos!"
+      redirect_to login_url, notice: "Email ou senha inválidos!"
     end
   end
 

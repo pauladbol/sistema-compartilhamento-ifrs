@@ -12,6 +12,10 @@ class Post < ActiveRecord::Base
 
   	before_save :destroy_attachment?
 
+    def post_owner
+      @post_owner = @post.user
+    end
+    
   	def delete_attachment
   		@delete_attachment ||= "0"
   	end

@@ -18,13 +18,23 @@
 
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <%= button_to 'Faça Login', login_path, :class=>"btn btn-default btn-lg"%> 
-                                
-                            </li>
-                            <li>
-                                <%= button_to 'Cadastre-se', new_user_path, :class=>"btn btn-default btn-lg" %> 
-                            </li>
+                            <% if current_user %>
+                                <li>
+                                    <%= link_to 'Crie uma nova postagem', new_post_path, :class=>"btn btn-default btn-lg"%> 
+                                    
+                                </li>
+                                <li>
+                                    <%= link_to 'Visualize as postagens existentes', posts_path, :class=>"btn btn-default btn-lg" %> 
+                                </li>
+                            <% else %>
+                                <li>
+                                    <%= link_to 'Faça Login', login_path, :class=>"btn btn-default btn-lg"%> 
+                                    
+                                </li>
+                                <li>
+                                    <%= link_to 'Cadastre-se', new_user_path, :class=>"btn btn-default btn-lg" %> 
+                                </li>
+                            <% end %>
                             
                         </ul>
                     </div>

@@ -59,13 +59,13 @@
                         <% end %>
     	            </div>
                     <div class="cl-lg-2 text-right">
-                       
+                        <% if @post.user != current_user%>
                         	<%= button_to like_post_path(@post), class: "btn btn-default" , method: :put do %>
                         		Aprovado!
         					  	<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> 
         					  	<%= @post.get_upvotes.size %>
         					<% end %>
-                        
+                        <% end %>
     				</div>
                     
                     
@@ -85,7 +85,7 @@
                 
                 <hr>
                 <!-- Blog Comments -->
-
+                <% if @post.user != current_user%>
                 <!-- Comments Form -->
                 <div class="well">
                     <h4>Deixe um comentário:</h4>
@@ -101,9 +101,10 @@
                 </div>
 
                 <hr>
+                <% end %>
 
                 <!-- Posted Comments -->
-                 <% @comments.each do |comment| %>
+                 <% @post.comments.each do |comment| %>
     
                     <!-- Comment -->
                     <div class="media">
