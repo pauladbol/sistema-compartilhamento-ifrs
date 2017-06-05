@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
 	rewardable
 	
 	EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
-	validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20}
+	#validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20}
 	validates :email, :presence => :true, :uniqueness => true, :format => EMAIL_REGEX
 	validates :password_digest, :presence => :true
-	validates_length_of :password_digest, :in => 6..20, :on => create
+	validates_length_of :password_digest, :in => 6..20, :on => create, :message => "Campo senha tem que ter entre 6 e 20 caracteres."
 
 	
 

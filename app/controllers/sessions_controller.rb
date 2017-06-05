@@ -22,6 +22,21 @@ class SessionsController < ApplicationController
     end
   end
 
+  # def update
+  #   @user = User.find(params[:id])
+  #   respond_to do |format|
+  #       if @user.authenticate(params[:current_password])
+  #           if @user.update(user_params)
+  #               format.html { redirect_to edit_user_path, notice: "Senha atualizada com sucesso!"}
+  #           else
+  #               render 'edit'
+  #           end
+  #       elsif !params[:current_password].nil? && @user.authenticate(params[:current_password]) == false
+  #           format.html { redirect_to edit_user_path, error: "Senha antiga errada!" }
+  #       end
+  #   end
+  # end
+
   def destroy
     cookies.delete(:auth_token)
     redirect_to index_url, notice: "Você finalizou a sua sessão!"

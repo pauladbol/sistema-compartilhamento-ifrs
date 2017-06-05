@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  # pt_br:
+# 	activerecord:
+# 	    errors:
+# 	      models:
+# 	        user:
+# 	          attributes:
+# 	            email:
+# 	              blank: "Email deve ser preenchido!"
+# 	            password_digest:
+# 	              blank: "Senha deve ser preenchida!"
+# 	      
