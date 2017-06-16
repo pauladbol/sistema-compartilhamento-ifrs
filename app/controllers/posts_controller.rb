@@ -4,10 +4,30 @@ class PostsController < ApplicationController
   # before_action :set_subject, only: [:new, :create, :edit]
   # before_action :set_user, only: [:new, :create, :edit]
 
+  require 'json'
+
   # GET /posts
   # GET /posts.json
   def index
     @posts  = Post.all
+
+    # words_array = Array.new
+
+    # # @posts.each do |post|
+    # #   str = post.text.html_safe.downcase
+
+    # #   words_array.push str.split(" ")
+    # # end
+    # words_array = "eu nao qero mais brincar disso, cansei".split(" ")
+
+    # @word_cloud = words_array
+
+    @tag_cloud = [
+                 { text: "test", weight: 15},
+                 { text: "Ipsum", weight: 9, link: "http://jquery.com/"},
+                 { text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
+                 { text: "Sit", weight: 7},  {text: "Amet", weight: 5}
+              ]
   end
 
   # GET /posts/1

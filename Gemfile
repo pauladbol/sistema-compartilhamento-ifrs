@@ -51,6 +51,10 @@ gem 'rails-observers'
 
 gem 'merit'
 
+gem 'jqcloud-rails'
+
+gem 'jquery-datatables-rails', '~> 3.4.0'
+
 #  ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

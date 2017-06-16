@@ -16,3 +16,10 @@
 	padding-left: 30px;
 	padding-right: 30px;
 }
+
+.badge-custom {
+  margin: 15px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
