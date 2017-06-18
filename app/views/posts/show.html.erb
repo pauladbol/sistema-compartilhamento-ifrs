@@ -41,7 +41,7 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time " aria-hidden="true"></span> Postado em <%= @post.created_at %></p>
+                <p><span class="glyphicon glyphicon-time " aria-hidden="true"></span> Postado em <%= @post.created_at.strftime('%Y-%m-%d %I:%M:%S') %></p>
 
                 <!-- Preview Image -->
                 <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt=""> -->
@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <% if @post.attachment_file_name != nil %>
-    	                   Anexo: <%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
+    	                   Anexo: <%= link_to @post.attachment_file_name, @post.attachment.url(:original, false), :target => "_blank" %>
                         <% end %>
     	            </div>
                     <div class="cl-lg-2 text-right">
@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <!-- Date/Time -->
-                        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Última alteração em <%= @post.updated_at %></p>
+                        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Última alteração em <%= @post.updated_at.strftime('%Y-%m-%d %I:%M:%S') %></p>
                     </div>
                     <div class="cl-lg-2 text-right">
                     </div>
@@ -89,7 +89,7 @@
                 <!-- Comments Form -->
                 <div class="well">
                     <h4>Deixe um comentário:</h4>
-                    <form role="form">
+                    
                         <div class="form-group">
                             <%= form_tag create_comment_path, method: "post" do %>
                             <%= hidden_field_tag "id", @post.id %>
@@ -97,7 +97,7 @@
                               <%= submit_tag "Enviar", :class =>"btn btn-default" %>
                             <% end %>
                         </div>
-                    </form>
+                    
                 </div>
 
                 <hr>

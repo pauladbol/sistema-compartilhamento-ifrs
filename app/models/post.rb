@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 	acts_as_votable
 	acts_as_commentable
 
-	has_attached_file :attachment, :path => ":rails_root/storage/#{Rails.env}#{ENV['RAILS_TEST_NUMBER']}/attachments/:id/:style/:basename.:extension"
+	has_attached_file :attachment
   	validates_attachment :attachment, content_type: { content_type: "application/pdf" }, :message => "Tipo de anexo inválido. Tipos válidos: PDF"
 
   	before_save :destroy_attachment?

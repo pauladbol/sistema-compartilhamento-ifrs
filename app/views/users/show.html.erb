@@ -36,9 +36,9 @@
             </div>
             <hr>
             <div class="row">
-                <% if current_user.badges != nil %>
+                <% if @user.badges != nil %>
                     
-                        <% current_user.badges.each do |badge| %>
+                        <% @user.badges.each do |badge| %>
                             <div class="col-lg-2 badge-custom text-center">
                                 <div class="row">
                                     <%= image_tag badge.custom_fields[:img_url], size: "70x70", :class => "text-left" %>
@@ -55,7 +55,7 @@
                 <% end %>
             </div>
             <hr>
-            <div class="row ">
+            <div class="row">
                 <h3> Postagens </h3> 
                 <% @user.posts.each do |post| %>
                     <div class="row post-list-sm">
@@ -79,7 +79,7 @@
                             <br>
                             <br>
                             <div class="row">
-                                <%= post.created_at %>
+                                <%= post.created_at.strftime('%Y-%m-%d %I:%M:%S') %>
                             </div>
                         </div>
                     </div>
