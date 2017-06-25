@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 	      comment.user = current_user
 	    end
 	    @comment.save
-	    redirect_to posts_path(@commentable.id)
+	    redirect_to post_path(@commentable.id)
 	end
 
 	def destroy

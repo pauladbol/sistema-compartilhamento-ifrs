@@ -1,5 +1,5 @@
 <% if notice != nil %>
-  <div class= "alert alert-success alert-dismissible col-lg-offset-4 col-lg-4 centralize text-center">
+  <div class= "alert alert-info alert-dismissible col-lg-offset-4 col-lg-4 centralize text-center">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <p id="notice"><%= notice %></p>
   </div>
@@ -56,15 +56,14 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
-
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">Compartilhe conhecimento</h2>
+                    <p class="lead">Compartilhe materiais de aula, incluindo PDFs e códigos.</p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                	<%= image_tag("ipad.png",:class => "img-responsive",:id => "img_ipad", :alt => "Ipad") %>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <%= image_tag("code-computer.png",:class => "img-responsive",:id => "img_code", :alt => "Computer code") %>
                 </div>
             </div>
 
@@ -77,25 +76,26 @@
     <div class="content-section-b">
 
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <div class="col-lg-5 col-sm-6">
+
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">ShareIF do mês</h2>
+                    <p class="lead">Ranking de aprovações dos usuários.</p>
                 </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                	<%= image_tag("dog.png",:class => "img-responsive",:id => "img_dog", :alt => "Dog") %>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag("ipad.png",:class => "img-responsive",:id => "img_ipad", :alt => "Ipad") %>
                 </div>
             </div>
+            
 
         </div>
         <!-- /.container -->
 
     </div>
     <!-- /.content-section-b -->
-
+<!--
     <div class="content-section-a">
 
         <div class="container">
@@ -112,10 +112,11 @@
                 </div>
             </div>
 
-        </div>
+        </div>-->
         <!-- /.container -->
-
+<!--
     </div>
+-->
     <!-- /.content-section-a -->
 
 	<a  name="contact"></a>

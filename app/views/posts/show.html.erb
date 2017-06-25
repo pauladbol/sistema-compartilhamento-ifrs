@@ -1,5 +1,5 @@
 <% if notice != nil %>
-	<div class= "alert alert-success alert-dismissible col-lg-offset-4 col-lg-4 centralize text-center">
+	<div class= "alert alert-info alert-dismissible col-lg-offset-4 col-lg-4 centralize text-center">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<p id="notice"><%= notice %></p>
 	</div>
@@ -109,11 +109,16 @@
                     <!-- Comment -->
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            <!-- <img class="media-object" src="http://placehold.it/64x64" alt=""> -->
+                            <%= image_tag ("user-pic.jpg"), size: "64x64", :class => "comment-image" %>
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading"><%= comment.user.name %>
-                                <small><%= comment.created_at %></small>
+
+                                <small>
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    <%= comment.created_at.strftime('%Y-%m-%d %I:%M:%S') %>
+                                </small>
                             </h4>
                             <%= comment.comment %>
                         </div>
