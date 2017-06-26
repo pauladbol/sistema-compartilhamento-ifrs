@@ -6,31 +6,38 @@
 <%end%>
 
 <!-- Page Content -->
-<div class="container min-margin-top">
+<div class=" min-margin-top">
 
     <div class="row">
-
-        <div class="col-lg-offset-1 col-lg-2 profile-background">
-            <div class="row text-center">
-                <%= image_tag ("user-pic.jpg"), size: "80x80", :class => "profile-image" %>
-            </div>
-            <div class="row text-center">
-                <h3><%= @user.name %></h3>
-            </div>
-            <!-- <div class="row text-center">
-                <%= @user.username %>
-            </div> -->
-            <div class="row text-center">
-                <%= @user.matricula %>
-            </div>
-            <div class="row text-center">
-                <%= @user.email %>
+        <div class="col-lg-offset-1 col-lg-10 profile-background">
+            <div class="row">
+                <div class="col-lg-1">
+                    <%= image_tag ("user-pic.jpg"), size: "80x80", :class => "profile-image" %>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <h3><%= @user.name %></h3>
+                    </div>
+                </div>
+                <!-- <div class="row text-center">
+                    <%= @user.username %>
+                </div> -->
+                <div class="row">
+                    <div class="col-lg-2 text-center">
+                        <%= @user.matricula %>
+                    </div>
+                    <div class="col-lg-2 text-center">
+                        <%= @user.email %>
+                    </div>
+                </div>
             </div>
             <br>
             <br>
         </div>
-
-        <div class="col-lg-8 profile-background space-between">
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-10 profile-background">
             <div class="row">
                 <h3> Prêmios </h3>
             </div>
@@ -39,7 +46,7 @@
                 <% if @user.badges != nil %>
                     
                         <% @user.badges.each do |badge| %>
-                            <div class="col-lg-2 badge-custom text-center">
+                            <div class="col-lg-2  text-center">
                                 <div class="row">
                                     <%= image_tag badge.custom_fields[:img_url], size: "70x70", :class => "text-left" %>
                                 </div>
