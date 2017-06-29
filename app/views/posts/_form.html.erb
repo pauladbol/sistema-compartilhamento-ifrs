@@ -35,10 +35,11 @@
 			</div>
 			<div class="col-lg-4">
 			   	<% if @post.attachment_file_name != nil %>
-	               <%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
-	               <%= f.check_box :delete_attachment, :label => "Deletar Anexo"%>
+			   	   	<%= f.file_field :attachment %>
+	               	<%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
+	              	<%= f.check_box :delete_attachment, :label => "Deletar Anexo"%>
 	            <% elsif %>
-	            <%= f.file_field :attachment %>
+	            	<%= f.file_field :attachment %>
 	            <% end %>
 			</div>
 		</div>

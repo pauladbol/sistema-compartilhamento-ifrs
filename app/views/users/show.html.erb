@@ -12,22 +12,21 @@
         <div class="col-lg-offset-1 col-lg-10 profile-background">
             <div class="row">
                 <div class="col-lg-1">
-                    <%= image_tag ("user-pic.jpg"), size: "80x80", :class => "profile-image" %>
+                    <%= image_tag ("user-pic.jpg"), size: "100x100", :class => "profile-image" %>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2">
-                        <h3><%= @user.name %></h3>
+                <div class="col-lg-11">
+                    <div class="row margin-profile">
+                        <div class="col-lg-2 ">
+                            <h3><%= @user.name %></h3>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="row text-center">
-                    <%= @user.username %>
-                </div> -->
-                <div class="row">
-                    <div class="col-lg-2 text-center">
-                        <%= @user.matricula %>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <%= @user.email %>
+                    <div class="row margin-profile">
+                        <div class="col-lg-2">
+                            <%= @user.matricula %>
+                        </div>
+                        <div class="col-lg-2">
+                            <%= @user.email %>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,14 +34,54 @@
             <br>
         </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-offset-1 col-lg-10 profile-background">
+
+    <!--</div>-->
+    <!--<div class="row">-->
+        <div class="col-lg-offset-1 col-lg-5  ">
+            <div class="row margin-profile">
+                <h3> Postagens </h3> 
+               
+            </div>
+             <hr>
+            <div class="row margin-profile">
+                <% @user.posts.each do |post| %>
+                    <div class="row post-list-sm">
+                        <div class="col-lg-2 text-center">
+                            <%= image_tag "shareif-logo1.png", size: "70x70", :class => "text-left" %>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="row">
+                                <%= link_to post.title, post %>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                Por <%= link_to post.user.name, post.user %>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 text-right">
+                            <div class="row">
+                                <%= post.subject.name %>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <%= post.created_at.strftime('%Y-%m-%d %I:%M:%S') %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <br>
+            <br>
+        </div>
             <div class="row">
+        <div class="col-lg-5 ">
+            <div class="row margin-profile">
                 <h3> Prêmios </h3>
             </div>
             <hr>
-            <div class="row">
+            <div class="row margin-profile">
                 <% if @user.badges != nil %>
                     
                         <% @user.badges.each do |badge| %>
@@ -61,41 +100,8 @@
                     
                 <% end %>
             </div>
-            <hr>
-            <div class="row">
-                <h3> Postagens </h3> 
-                <% @user.posts.each do |post| %>
-                    <div class="row post-list-sm">
-                        <div class="col-lg-2">
-                            <%= image_tag "shareif-logo1.png", size: "70x70", :class => "text-left" %>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="row">
-                                <%= link_to post.title, post %>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                Por <%= post.user.name %>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 text-right">
-                            <div class="row">
-                                <%= post.subject.name %>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <%= post.created_at.strftime('%Y-%m-%d %I:%M:%S') %>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-            <br>
-            <br>
         </div>
-
-        
     </div>
+        
+    <!--</div>-->
 </div>
