@@ -34,88 +34,89 @@ end
 
 Merit::Badge.create!(
   id: 1,
-  name: "Chuck",
-  description: "Parabéns, você virou o Chuck Norris!",
+  name: "Zeca Urubu",
+  description: "Parabéns, você virou o Pé de Pano!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 2,
-  name: "Babaca",
-  description: "Parabéns, você virou um Babaca!",
+  name: "Pica Pau",
+  description: "Parabéns, você virou o Pica Pau!",
   custom_fields: { difficulty: :gold},
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 3,
-  name: "Querido",
-  description: "Parabéns, você virou um Querido!",
+  name: "Clint Eastwood",
+  description: "Parabéns, você virou o Clint Eastwood!",
   custom_fields: { difficulty: :gold },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 4,
-  name: "Amado",
-  description: "Parabéns, você virou um Amado!",
+  name: "Chuck Norris",
+  description: "Parabéns, você virou o Chuck Norris!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 5,
-  name: "Calouro",
-  description: "Parabéns, você virou um Calouro!",
+  name: "Escritor Junior",
+  description: "Parabéns, você virou um Escritor Júnior!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 6,
-  name: "Popular",
-  description: "Parabéns, você virou Popular!",
+  name: "Escritor Pleno",
+  description: "Parabéns, você virou um Escritor Pleno!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
 Merit::Badge.create!(
   id: 7,
-  name: "Super Popular",
-  description: "Parabéns, você virou Super Popular!",
+  name: "Escritor Senior",
+  description: "Parabéns, você virou um Escritor Sênior!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
+
 
 Merit::Badge.create!(
   id: 8,
-  name: "Escritor Jr",
-  description: "Parabéns, você virou Super Escritor Jr!",
+  name: "Super Escritor",
+  description: "Parabéns, você virou um Super Escritor!",
   custom_fields: { difficulty: :silver },
   custom_fields: { img_url: 'shareif-logo1.png' }
 )
 
-Merit::Badge.create!(
-  id: 9,
-  name: "Escritor",
-  description: "Parabéns, você virou Super Escritor!",
-  custom_fields: { difficulty: :silver },
-  custom_fields: { img_url: 'shareif-logo1.png' }
-)
+# Merit::Badge.create!(
+#   id: 8,
+#   name: "Escritor Jr",
+#   description: "Parabéns, você virou Super Escritor Jr!",
+#   custom_fields: { difficulty: :silver },
+#   custom_fields: { img_url: 'shareif-logo1.png' }
+# )
 
-Merit::Badge.create!(
-  id: 10,
-  name: "Criativo",
-  description: "Parabéns, você virou Super Criativo!",
-  custom_fields: { difficulty: :silver },
-  custom_fields: { img_url: 'shareif-logo1.png' }
-)
+# Merit::Badge.create!(
+#   id: 9,
+#   name: "Escritor",
+#   description: "Parabéns, você virou Super Escritor!",
+#   custom_fields: { difficulty: :silver },
+#   custom_fields: { img_url: 'shareif-logo1.png' }
+# )
 
-Merit::Badge.create!(
-  id: 11,
-  name: "Mega Criativo",
-  description: "Parabéns, você virou Super Mega Criativo!",
-  custom_fields: { difficulty: :silver },
-  custom_fields: { img_url: 'shareif-logo1.png' }
-)
+# Merit::Badge.create!(
+#   id: 10,
+#   name: "Criativo",
+#   description: "Parabéns, você virou Super Criativo!",
+#   custom_fields: { difficulty: :silver },
+#   custom_fields: { img_url: 'shareif-logo1.png' }
+# )

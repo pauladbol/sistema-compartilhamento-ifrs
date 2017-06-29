@@ -45,39 +45,39 @@ module Merit
       #   user.name.length > 4
       # end
 
-        grant_on 'posts#upvote', badge: 'Amado', to: :user do |post|
-          post.votes_for.size == 1
+        grant_on 'posts#upvote', badge: 'Zeca Urubu', to: :user do |post|
+          post.votes_for.size >= 1
         end
 
-        grant_on 'posts#upvote', badge: 'Calouro', to: :user do |post|
-          post.votes_for.size == 5
+        grant_on 'posts#upvote', badge: 'Pica Pau', to: :user do |post|
+          post.votes_for.size >= 5
         end
 
-        grant_on 'posts#upvote', badge: 'Popular', to: :user do |post|
-          post.votes_for.size == 10
+        grant_on 'posts#upvote', badge: 'Clint Eastwood', to: :user do |post|
+          post.votes_for.size >= 10
         end
 
-        grant_on 'posts#upvote', badge: 'Super Popular', to: :user do |post|
-          post.votes_for.size == 15
+        grant_on 'posts#upvote', badge: 'Chuck Norris', to: :user do |post|
+          post.votes_for.size >= 15
         end
 
-        grant_on ['users#update'], badge: 'Babaca' do |user|
-            user.name? && user.email?
-        end  
+        # grant_on ['users#update'], badge: 'Babaca' do |user|
+        #     user.name? && user.email?
+        # end  
 
-        grant_on ['users#show'], badge: 'Escritor Jr' do |user|
+        grant_on ['users#show'], badge: 'Escritor Junior' do |user|
             user.posts.count >= 1
         end 
 
-        grant_on ['users#show'], badge: 'Escritor' do |user|
+        grant_on ['users#show'], badge: 'Escritor Pleno' do |user|
             user.posts.count >= 5
         end 
 
-        grant_on ['users#show'], badge: 'Criativo' do |user|
+        grant_on ['users#show'], badge: 'Escritor Senior' do |user|
             user.posts.count >= 10
         end 
 
-        grant_on ['users#show'], badge: 'Mega Criativo' do |user|
+        grant_on ['users#show'], badge: 'Super Escritor' do |user|
             user.posts.count >= 15
         end
         
