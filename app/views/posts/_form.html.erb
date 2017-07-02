@@ -22,7 +22,7 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<div class="col-lg-offset-3 col-lg-2">
+		<div class="col-lg-offset-3 col-lg-3">
 			<div class="">
 		  		<%= f.collection_select :subject_id, Subject.order(:name), :id, :name, {:prompt => "Escolha uma categoria"}, {:class => "form-control"} %>
 		 	 </div>
@@ -30,14 +30,13 @@
 	</div>
 	<div class="form-group">
 		<div class="col-lg-offset-3 col-lg-6">
-			<div class="col-lg-3">
-				Adicione um anexo:
+			<div class="col-lg-2">
+				Anexo:
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 			   	<% if @post.attachment_file_name != nil %>
-			   	   	<%= f.file_field :attachment %>
 	               	<%= link_to @post.attachment_file_name, @post.attachment.url(:original, false) %>
-	              	<%= f.check_box :delete_attachment, :label => "Deletar Anexo"%>
+	              	<%= f.check_box :delete_attachment, :label => "Deletar Anexo"%> Deletar Anexo
 	            <% elsif %>
 	            	<%= f.file_field :attachment %>
 	            <% end %>

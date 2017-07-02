@@ -3,11 +3,13 @@
   border-left-width: 5px !important;
   border-radius: 3px !important;
   padding: 40px;
+  padding-left: 5px !important;
 }
 
 .post-list:hover{
   border-left-color: #000000 !important;
   padding: 40px;
+  padding-left: 5px !important;
 }
 
 .post-list-sm {
@@ -48,3 +50,7 @@
 	background-color: #CDC8B1;
 	text-decoration: none;
 }*/
+
+.image-post {
+  margin-right: 10px;
+}

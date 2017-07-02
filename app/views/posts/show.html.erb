@@ -15,11 +15,11 @@
 
                 <!-- Blog Post -->
                 <div class="row">
-                    <div class="col-lg-11">
+                    <div class="col-lg-11 col-xs-10">
                         <!-- Title -->
                         <h1><%= @post.title %></h1>
                     </div>
-                    <div class="col-lg-1">
+                    <div class="col-lg-1 col-xs-2">
                         <% if @post.user == current_user %>
                             <a href= "/posts/<%=@post.id%>/edit" class="btn btn-default btn-sm" title="Editar Postagem">
                             <span class="glyphicon glyphicon-edit icon-edit" aria-hidden="true">
@@ -104,6 +104,11 @@
                 <% end %>
 
                 <!-- Posted Comments -->
+                <div>
+                
+                    <h3>Comentários</h3>
+                    <br>
+                </div>
                  <% @post.comments.each do |comment| %>
     
                     <!-- Comment -->
